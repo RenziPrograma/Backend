@@ -26,17 +26,47 @@ public class Persona {
     private Long id;
     
     @NotNull
-    private String nombre;
+    private String name;
     @NotNull
-    private String apellido;
+    private String surname;
+    @NotNull
+    private String position;
+    @NotNull
+    private String base;    
+    @NotNull
+    private String email;
+    @NotNull
+    private String telephone;
+    @NotNull
+    private String profileImageUrl;
+    @NotNull
+    private String representativeImageUrl;
+    @NotNull
+    private String description;
     
     public Persona(){
     }
     
-    public Persona(Long id, String nombre, String apellido){
+    public Persona(Long id, 
+            String name,
+            String surname,
+            String position,
+            String base, 
+            String email, 
+            String telephone,
+            String profileImageUrl,
+            String representativeImageUrl,
+            String description){
         this.id=id;
-        this.nombre=nombre;
-        this.apellido=apellido;
+        this.name=name;
+        this.surname=surname;
+        this.position = position;
+        this.base = base;
+        this.email = email;
+        this.telephone = telephone;
+        this.profileImageUrl = profileImageUrl;
+        this.representativeImageUrl = representativeImageUrl;
+        this.description = representativeImageUrl;
     }
     
     
