@@ -9,6 +9,7 @@ import com.renziportfolio.PortFolioDeRenzi.service.IPersonaService;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,11 +32,12 @@ public class Controller {
     @Autowired
     private IPersonaService persoServ;
 
-    
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/new/persona")
     public void agregarPersona (@RequestBody Persona pers){
        persoServ.crearPersona(pers);
     }
+    
     
     @GetMapping("/ver/personas")
     @ResponseBody
@@ -43,12 +45,15 @@ public class Controller {
             return persoServ.verPersona();
     }
     
+    
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public void borrarPersona(@PathVariable long id){
         persoServ.borrarPersona(id);
     
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/editar/personas/{id}")
     public Persona editarPersona(@PathVariable long id,
                               @RequestParam("name") String newName,

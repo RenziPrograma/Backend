@@ -1,17 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.renziportfolio.PortFolioDeRenzi.Security.Entity;
 
 import com.renziportfolio.PortFolioDeRenzi.Security.Enums.RollName;
-import com.sun.istack.NotNull;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -26,15 +24,15 @@ public class Roll {
     
     @NotNull
     @Enumerated(EnumType.STRING)
-    private RollName rollname;
+    private RollName rollName;
     
     //*************constructor****************
 
     public Roll() {
     }
 
-    public Roll(RollName rollname) {
-        this.rollname = rollname;
+    public Roll(RollName rollName) {
+        this.rollName = rollName;
     }
     
         //*************GETTER Y SETTER****************
@@ -47,12 +45,12 @@ public class Roll {
         this.id = id;
     }
 
-    public RollName getRollname() {
-        return rollname;
+    public RollName getRollName() {
+        return rollName;
     }
 
-    public void setRollname(RollName rollname) {
-        this.rollname = rollname;
+    public void setRollName(RollName rollName) {
+        this.rollName = rollName;
     }
 
 

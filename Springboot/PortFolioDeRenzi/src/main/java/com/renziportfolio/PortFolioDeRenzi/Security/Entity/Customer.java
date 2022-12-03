@@ -4,11 +4,12 @@
  */
 package com.renziportfolio.PortFolioDeRenzi.Security.Entity;
 
-import com.sun.istack.NotNull;
+
 import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +17,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -23,7 +25,7 @@ import javax.persistence.ManyToMany;
  */
 
 @Entity
-public class User {
+public class Customer {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY) 
     private int id;
@@ -31,23 +33,23 @@ public class User {
     private String name;
     @NotNull
     @Column(unique=true)
-    private String userName;
+    private String customerName;
     @NotNull
     private String email;
     @NotNull
     private String password;
     @ManyToMany(fetch=FetchType.EAGER)
-    @JoinTable(name="user_roll", joinColumns=@JoinColumn(name="user_id"), inverseJoinColumns=@JoinColumn(name="roll_id"))
+    @JoinTable(name="customer_roll", joinColumns=@JoinColumn(name="customer_id"), inverseJoinColumns=@JoinColumn(name="roll_id"))
     private Set <Roll> rolls=new HashSet<>();
     
     //************CONSTRUCTORES**********
 
-    public User() {
+    public Customer() {
     }
 
-    public User(String name, String userName, String email, String password) {
+    public Customer(String name, String customerName, String email, String password) {
         this.name = name;
-        this.userName = userName;
+        this.customerName = customerName;
         this.email = email;
         this.password = password;
     }
@@ -70,12 +72,12 @@ public class User {
         this.name = name;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getCustomerName() {
+        return customerName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
     public String getEmail() {
@@ -101,18 +103,9 @@ public class User {
     public void setRolls(Set<Roll> rolls) {
         this.rolls = rolls;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+ 
+   
 }
