@@ -4,7 +4,8 @@
  */
 package com.renziportfolio.PortFolioDeRenzi.repository;
 
-import com.renziportfolio.PortFolioDeRenzi.Entity.Persona;
+import com.renziportfolio.PortFolioDeRenzi.Entity.TechSkills;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,8 +13,9 @@ import org.springframework.stereotype.Repository;
  *
  * @author redac
  */
-
 @Repository
-public interface PersonaRepository extends JpaRepository <Persona, Long> {
+public interface TechSkillRepository extends JpaRepository<TechSkills, Integer> {
+    Optional<TechSkills> findBySkillName(String skillName);
+    public boolean existsBySkillName(String skillName);
     
 }

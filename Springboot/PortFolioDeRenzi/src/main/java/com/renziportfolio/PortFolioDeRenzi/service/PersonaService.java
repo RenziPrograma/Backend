@@ -4,7 +4,7 @@
  */
 package com.renziportfolio.PortFolioDeRenzi.service;
 
-import com.renziportfolio.PortFolioDeRenzi.model.Persona;
+import com.renziportfolio.PortFolioDeRenzi.Entity.Persona;
 import com.renziportfolio.PortFolioDeRenzi.repository.PersonaRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

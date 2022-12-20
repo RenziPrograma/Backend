@@ -4,7 +4,7 @@
  */
 package com.renziportfolio.PortFolioDeRenzi.Controller;
 
-import com.renziportfolio.PortFolioDeRenzi.model.Persona;
+import com.renziportfolio.PortFolioDeRenzi.Entity.Persona;
 import com.renziportfolio.PortFolioDeRenzi.service.IPersonaService;
 
 import java.util.List;
@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author redac
  */
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 public class Controller {
     
@@ -69,7 +69,7 @@ public class Controller {
         
     }
     
-    @GetMapping("/buscar/persona")
+    @GetMapping("/buscar/persona/{id}")
     public Persona buscarPersona(){
         return persoServ.buscarPersona((long) 1);
     }

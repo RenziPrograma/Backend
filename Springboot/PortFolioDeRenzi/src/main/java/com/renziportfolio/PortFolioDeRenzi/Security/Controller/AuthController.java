@@ -55,7 +55,7 @@ public class AuthController {
     @Autowired
     JwtProvider jwtProvider;
     
-    
+        
     @PostMapping("/new")
     public ResponseEntity<?> nuevo (@Valid @RequestBody NewCustomer newCustomer, BindingResult bindingResult){
         if (bindingResult.hasErrors())
