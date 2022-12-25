@@ -4,7 +4,7 @@
  */
 package com.renziportfolio.PortFolioDeRenzi.service;
 
-import com.renziportfolio.PortFolioDeRenzi.model.Persona;
+import com.renziportfolio.PortFolioDeRenzi.Entity.Persona;
 import java.util.List;
 
 /**

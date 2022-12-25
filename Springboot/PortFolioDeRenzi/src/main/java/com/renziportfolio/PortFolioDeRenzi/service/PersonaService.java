@@ -4,9 +4,11 @@
  */
 package com.renziportfolio.PortFolioDeRenzi.service;
 
-import com.renziportfolio.PortFolioDeRenzi.model.Persona;
+import com.renziportfolio.PortFolioDeRenzi.Entity.Persona;
 import com.renziportfolio.PortFolioDeRenzi.repository.PersonaRepository;
 import java.util.List;
+import java.util.Optional;
+import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,28 +18,39 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class PersonaService  implements IPersonaService{
+@Transactional
+public class PersonaService  {
     
     @Autowired
-    public PersonaRepository persoRepo;
+    public PersonaRepository personaRepository;
     
-    @Override
-    public List <Persona> verPersona() {
-     return persoRepo.findAll(); 
+    public List <Persona> list(){
+        return personaRepository.findAll();
     }
-
-    @Override
-    public void crearPersona(Persona per) {
-      persoRepo.save(per);  }
-
-    @Override
-    public void borrarPersona(Long id) {
-        persoRepo.deleteById(id);
+    
+   
+    public Optional<Persona>getOne(int id){
+        return personaRepository.findById(id);
     }
-
-    @Override
-    public Persona buscarPersona(Long id) {
-       return persoRepo.findById(id).orElse(null);   }
-
+    
+    public Optional<Persona> getByName(String Name){
+        return personaRepository.findByName(Name);
+    }
+    
+    public void save (Persona persona){
+        personaRepository.save(persona);
+    }
+    
+    public void delete (int id){
+        personaRepository.deleteById(id);
+    }
+    
+    public boolean existsById (int id){
+       return personaRepository.existsById(id);
+    }
+    
+    public boolean existsBySchoolName(String name){
+        return personaRepository.existsByName(name);
+    }
     
 }

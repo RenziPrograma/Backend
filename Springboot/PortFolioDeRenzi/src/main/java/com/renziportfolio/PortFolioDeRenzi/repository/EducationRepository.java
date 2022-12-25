@@ -4,7 +4,7 @@
  */
 package com.renziportfolio.PortFolioDeRenzi.repository;
 
-import com.renziportfolio.PortFolioDeRenzi.Entity.Persona;
+import com.renziportfolio.PortFolioDeRenzi.Entity.Education;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -13,10 +13,10 @@ import org.springframework.stereotype.Repository;
  *
  * @author redac
  */
+
 @Repository
-public interface PersonaRepository extends JpaRepository<Persona, Integer> {
-
-    public Optional<Persona> findByName(String Name);
-
-    public boolean existsByName(String Name);
+public interface EducationRepository extends JpaRepository<Education, Integer>{
+    public Optional<Education> findBySchoolName(String schoolName);
+    public boolean existsBySchoolName(String schoolName);
+    
 }

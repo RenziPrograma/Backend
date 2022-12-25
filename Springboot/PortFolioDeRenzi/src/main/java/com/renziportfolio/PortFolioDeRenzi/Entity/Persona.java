@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.renziportfolio.PortFolioDeRenzi.model;
+package com.renziportfolio.PortFolioDeRenzi.Entity;
 
 import com.sun.istack.NotNull;
 import javax.persistence.Entity;
@@ -22,8 +22,8 @@ import lombok.Setter;
 public class Persona {
     
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private int id;
     
     @NotNull
     private String name;
@@ -46,28 +46,22 @@ public class Persona {
     
     public Persona(){
     }
-    
-    public Persona(Long id, 
-            String name,
-            String surname,
-            String position,
-            String base, 
-            String email, 
-            String telephone,
-            String profileImageUrl,
-            String representativeImageUrl,
-            String description){
-        this.id=id;
-        this.name=name;
-        this.surname=surname;
+
+    public Persona(int id, String name, String surname, String position, String base, String email, String telephone, String profileImageUrl, String representativeImageUrl, String description) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
         this.position = position;
         this.base = base;
         this.email = email;
         this.telephone = telephone;
         this.profileImageUrl = profileImageUrl;
         this.representativeImageUrl = representativeImageUrl;
-        this.description = representativeImageUrl;
+        this.description = description;
     }
+
+    
+
     
     
     
