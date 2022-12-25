@@ -23,7 +23,7 @@ public class Persona {
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     
     @NotNull
     private String name;
@@ -46,28 +46,22 @@ public class Persona {
     
     public Persona(){
     }
-    
-    public Persona(Long id, 
-            String name,
-            String surname,
-            String position,
-            String base, 
-            String email, 
-            String telephone,
-            String profileImageUrl,
-            String representativeImageUrl,
-            String description){
-        this.id=id;
-        this.name=name;
-        this.surname=surname;
+
+    public Persona(int id, String name, String surname, String position, String base, String email, String telephone, String profileImageUrl, String representativeImageUrl, String description) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
         this.position = position;
         this.base = base;
         this.email = email;
         this.telephone = telephone;
         this.profileImageUrl = profileImageUrl;
         this.representativeImageUrl = representativeImageUrl;
-        this.description = representativeImageUrl;
+        this.description = description;
     }
+
+    
+
     
     
     
