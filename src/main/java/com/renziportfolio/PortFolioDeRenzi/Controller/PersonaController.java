@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  */
 @RequestMapping("/personas")
-@CrossOrigin(origins = "https://frontendrenziprograma.web.app")
+@CrossOrigin(origins = {"https://frontendrenziprograma.web.app","http://localhost:4200"})
 
 @RestController
 public class PersonaController {
@@ -59,7 +59,7 @@ public class PersonaController {
             return new ResponseEntity(new Msj("Error, el ID no existe"), HttpStatus.NOT_FOUND);
         }
         personaService.delete(id);
-        return new ResponseEntity(new Msj("Educación eliminada correctamente"), HttpStatus.OK);
+        return new ResponseEntity(new Msj("Persona eliminada correctamente"), HttpStatus.OK);
     }
 
     @PostMapping("/create")
