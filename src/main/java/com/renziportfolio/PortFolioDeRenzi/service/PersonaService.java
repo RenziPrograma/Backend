@@ -49,8 +49,10 @@ public class PersonaService  {
        return personaRepository.existsById(id);
     }
     
-    public boolean existsBySchoolName(String name){
+    public boolean existsByName(String name){
         return personaRepository.existsByName(name);
     }
+    
+    
     
 }

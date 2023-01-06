@@ -67,7 +67,7 @@ public class PersonaController {
         if (StringUtils.isBlank(dtoPersona.getName())) {
             return new ResponseEntity(new Msj("Error, el nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        if (personaService.existsBySchoolName(dtoPersona.getName())) {
+        if (personaService.existsByName(dtoPersona.getName())) {
             return new ResponseEntity(new Msj("Error, ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
 
@@ -91,7 +91,7 @@ public class PersonaController {
         if (!personaService.existsById(id)) {
             return new ResponseEntity(new Msj("El id no existe"), HttpStatus.NOT_FOUND);
         }
-        if (personaService.existsBySchoolName(dtoPersona.getName()) && personaService.getByName(dtoPersona.getName()).get().getId() != id) {
+        if (personaService.existsByName(dtoPersona.getName()) && personaService.getByName(dtoPersona.getName()).get().getId() != id) {
             return new ResponseEntity(new Msj("Esa Persona ya existe"), HttpStatus.BAD_REQUEST);
         }
         if (StringUtils.isBlank(dtoPersona.getName())) {
