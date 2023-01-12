@@ -92,7 +92,7 @@ public class ProjectRepoController {
 
         ProjectRepo projectRepo = projectRepoService.getOne(id).get();
 
-        projectRepo.setId(dtoProjectRepo.getPersona_id());
+        projectRepo.setPersona_id(dtoProjectRepo.getPersona_id());
         projectRepo.setName(dtoProjectRepo.getName());
         projectRepo.setLink(dtoProjectRepo.getLink());
         projectRepo.setImg(dtoProjectRepo.getImg());

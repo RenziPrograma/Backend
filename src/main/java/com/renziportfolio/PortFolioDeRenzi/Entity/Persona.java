@@ -33,17 +33,17 @@ public class Persona {
     private String email;
     @NotNull
     private String telephone;
-    @NotNull
+    
     private String profileImageUrl;
-    @NotNull
-    private String representativeImageUrl;
+    
+    private String representaImg;
     @NotNull
     private String description;
     
     public Persona(){
     }
 
-    public Persona(int id, String name, String surname, String position, String base, String email, String telephone, String profileImageUrl, String representativeImageUrl, String description) {
+    public Persona(int id, String name, String surname, String position, String base, String email, String telephone, String profileImageUrl, String representaImg, String description) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -52,7 +52,7 @@ public class Persona {
         this.email = email;
         this.telephone = telephone;
         this.profileImageUrl = profileImageUrl;
-        this.representativeImageUrl = representativeImageUrl;
+        this.representaImg = representaImg;
         this.description = description;
     }
 
@@ -120,12 +120,12 @@ public class Persona {
         this.profileImageUrl = profileImageUrl;
     }
 
-    public String getRepresentativeImageUrl() {
-        return representativeImageUrl;
+    public String getRepresentaImg() {
+        return representaImg;
     }
 
-    public void setRepresentativeImageUrl(String representativeImageUrl) {
-        this.representativeImageUrl = representativeImageUrl;
+    public void setRepresentaImg(String representaImg) {
+        this.representaImg = representaImg;
     }
 
     public String getDescription() {
@@ -136,10 +136,7 @@ public class Persona {
         this.description = description;
     }
 
-    
 
-    
-    
     
 }
 

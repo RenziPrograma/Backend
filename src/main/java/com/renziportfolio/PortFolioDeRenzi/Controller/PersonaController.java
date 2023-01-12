@@ -80,7 +80,7 @@ public class PersonaController {
                 dtoPersona.getEmail(),
                 dtoPersona.getTelephone(),
                 dtoPersona.getProfileImageUrl(),
-                dtoPersona.getRepresentativeImageUrl(),
+                dtoPersona.getRepresentaImg(),
                 dtoPersona.getDescription());
         personaService.save(persona);
         return new ResponseEntity(new Msj("Persona guardada exitosamente"), HttpStatus.OK);
@@ -107,7 +107,7 @@ public class PersonaController {
         persona.setEmail(dtoPersona.getEmail());
         persona.setTelephone(dtoPersona.getTelephone());
         persona.setProfileImageUrl(dtoPersona.getProfileImageUrl());
-        persona.setRepresentativeImageUrl(dtoPersona.getRepresentativeImageUrl());
+        persona.setRepresentaImg(dtoPersona.getRepresentaImg());
         persona.setDescription(dtoPersona.getDescription());
 
         personaService.save(persona);

@@ -28,14 +28,14 @@ public class DtoPersona {
     @NotBlank
     private String profileImageUrl;
     @NotBlank
-    private String representativeImageUrl;
+    private String representaImg;
     @NotBlank
     private String description;
 
     public DtoPersona() {
     }
 
-    public DtoPersona(int id, String name, String surname, String position, String base, String email, String telephone, String profileImageUrl, String representativeImageUrl, String description) {
+    public DtoPersona(int id, String name, String surname, String position, String base, String email, String telephone, String profileImageUrl, String representaImg, String description) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -44,7 +44,7 @@ public class DtoPersona {
         this.email = email;
         this.telephone = telephone;
         this.profileImageUrl = profileImageUrl;
-        this.representativeImageUrl = representativeImageUrl;
+        this.representaImg = representaImg;
         this.description = description;
     }
 
@@ -112,12 +112,12 @@ public class DtoPersona {
         this.profileImageUrl = profileImageUrl;
     }
 
-    public String getRepresentativeImageUrl() {
-        return representativeImageUrl;
+    public String getRepresentaImg() {
+        return representaImg;
     }
 
-    public void setRepresentativeImageUrl(String representativeImageUrl) {
-        this.representativeImageUrl = representativeImageUrl;
+    public void setRepresentaImg(String representaImg) {
+        this.representaImg = representaImg;
     }
 
     public String getDescription() {
@@ -127,6 +127,7 @@ public class DtoPersona {
     public void setDescription(String description) {
         this.description = description;
     }
+
     
     
 }
