@@ -67,7 +67,7 @@ public class PersonaController {
         if (StringUtils.isBlank(dtoPersona.getName())) {
             return new ResponseEntity(new Msj("Error, el nombre es obligatorio"), HttpStatus.BAD_REQUEST);
         }
-        if (personaService.existsBySchoolName(dtoPersona.getName())) {
+        if (personaService.existsByName(dtoPersona.getName())) {
             return new ResponseEntity(new Msj("Error, ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
 
@@ -80,7 +80,7 @@ public class PersonaController {
                 dtoPersona.getEmail(),
                 dtoPersona.getTelephone(),
                 dtoPersona.getProfileImageUrl(),
-                dtoPersona.getRepresentativeImageUrl(),
+                dtoPersona.getRepresentaImg(),
                 dtoPersona.getDescription());
         personaService.save(persona);
         return new ResponseEntity(new Msj("Persona guardada exitosamente"), HttpStatus.OK);
@@ -91,7 +91,7 @@ public class PersonaController {
         if (!personaService.existsById(id)) {
             return new ResponseEntity(new Msj("El id no existe"), HttpStatus.NOT_FOUND);
         }
-        if (personaService.existsBySchoolName(dtoPersona.getName()) && personaService.getByName(dtoPersona.getName()).get().getId() != id) {
+        if (personaService.existsByName(dtoPersona.getName()) && personaService.getByName(dtoPersona.getName()).get().getId() != id) {
             return new ResponseEntity(new Msj("Esa Persona ya existe"), HttpStatus.BAD_REQUEST);
         }
         if (StringUtils.isBlank(dtoPersona.getName())) {
@@ -107,7 +107,7 @@ public class PersonaController {
         persona.setEmail(dtoPersona.getEmail());
         persona.setTelephone(dtoPersona.getTelephone());
         persona.setProfileImageUrl(dtoPersona.getProfileImageUrl());
-        persona.setRepresentativeImageUrl(dtoPersona.getRepresentativeImageUrl());
+        persona.setRepresentaImg(dtoPersona.getRepresentaImg());
         persona.setDescription(dtoPersona.getDescription());
 
         personaService.save(persona);
